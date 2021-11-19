@@ -4,8 +4,8 @@ PlusCircleIcon,
 UserGroupIcon,
 HeartIcon,
 PaperAirplaneIcon,
-MenuIcon,
-HomeIcon} from "@heroicons/react/outline";
+MenuIcon} from "@heroicons/react/outline";
+import {HomeIcon} from '@heroicons/react/solid'
 
 function header() {
     return (
