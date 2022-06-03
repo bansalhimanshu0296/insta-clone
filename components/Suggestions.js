@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
-import faker from "faker";
+import { randUser } from '@ngneat/falso';
+
 
 function Suggestions() {
 
     const [suggestions, setSuggestions] = useState([]);
     useEffect(() => {
         const suggestions = [...Array(5)].map((_, i)=>({
-            ...faker.helpers.contextualCard(),
+            //...faker.helpers.contextualCard(),
+            ...randUser(),
             id: i
         }));
         setSuggestions(suggestions);
@@ -20,12 +22,12 @@ function Suggestions() {
              {
             suggestions.map((profile)=>(
                 <div key={profile.id} className="flex items-center justify-between mt-3">
-                        <img src={profile.avatar}
+                        <img src={profile.img}
                         alt=""
                         className="w-10 h-10 rounded-full border p-[2p x]"/>
                         <div className="flex-1 ml-4">
                             <h2 className="font-semibold text-sm">{profile.username}</h2>
-                            <h3 className="text-xs text-gray-400">Works at {profile.company.name}</h3>
+                            <h3 className="text-xs text-gray-400">Works at {profile.email.split('@')[1]}</h3>
                         </div>
                         <button className="text-blue-400 font-bold text-sm">Follow</button>
                     </div>
