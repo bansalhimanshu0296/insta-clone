@@ -115,7 +115,7 @@ function Post({id, username, userImg, img, caption}) {
                     <div className="ml-10 overflow-y-scroll scroll-thumb-black scrollbar-thin">
                         {comments.map(comment=>(
                             <div key={comment.id} className="flex item-center space-x-2 mb-3">
-                                <img src={comment.data().profileImg} alt="" className="rounded-full h-5 w-5 object-contain"/>
+                                <img src={comment.data().profileImg} alt="" className="rounded-full h-7"/>
                                 <p className="text-sm flex-1">
                                     <span className="font-bold">{comment.data().username}
                                     </span>{" "}{comment.data().comment}
